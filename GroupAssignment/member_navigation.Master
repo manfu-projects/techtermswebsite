@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="member_navigation.master.cs" Inherits="GroupAssignment.member_navigation" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="member_page.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form runat="server">
+        <div class="member_nav">
+            <div class="logo">
+                <a href="#">Tech Terms</a>
+            </div>
+            <div class="navbar-desktop">
+                <a href="member_dashboard.aspx">Dashboard</a>
+                <a href="member_all_decks.aspx">Decks</a>
+                <a href="member_study_list.aspx">Study List</a>
+                <a href="member_about_us.aspx">About Us</a>
+            </div>
+            <div class="member-btn">
+                <a href="member_profile.aspx"><img src="#" class="member-profile-btn"></img></a>
+            </div>
+            <div class="hamburger-wrapper">
+                <button type="button" class="hamburger" id="hamburgerBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="navbar-mobile" id="navbarMenu">
+                <a href="member_dashboard.aspx">Dashboard</a>
+                <a href="member_all_decks.aspx">Decks</a>
+                <a href="member_study_list.aspx">Study List</a>
+                <a href="member_about_us.aspx">About Us</a>
+                <a href="member_profile.aspx">Profile</a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-column-rights">
+                <h3>Tech Terms</h3>
+                <p>&copy; Tech Terms. All rights reserved.</p>
+            </div>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h4>Top Courses</h4>
+                    <ul>
+                        <li><a href="#">UI and UX Design</a></li>
+                        <li><a href="#">Ethical Hacking</a></li>
+                        <li><a href="#">SOC Analysis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Link</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            var hamburger = document.getElementById('hamburgerBtn');
+            var navbar = document.getElementById('navbarMenu');
+
+            if (hamburger && navbar) {
+                hamburger.addEventListener('click', function () {
+                    navbar.classList.toggle('show');
+                });
+
+                // Close menu when a link is clicked
+                var navLinks = navbar.querySelectorAll('a');
+                for (var i = 0; i < navLinks.length; i++) {
+                    navLinks[i].addEventListener('click', function () {
+                        navbar.classList.remove('show');
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="guest_navigation.Master.cs" Inherits="GroupAssignment.navigation" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="guest_page.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <div class="guest_nav">
+            <div class="logo">
+                <a href="guest_home.aspx">Tech Terms</a>
+            </div>
+            <div class="navbar-desktop">
+                <a href="guest_home.aspx">Home</a>
+                <a href="guest_all_decks.aspx#">Decks</a>
+                <a href="guest_about_us.aspx#">About Us</a>
+            </div>
+            <div class="guest-btn-desktop">
+                <a href="login.aspx" class="login-btn">Log In</a>
+                <a href="signup.aspx" class="get-started-btn">Get Started</a>
+            </div>
+            <div class="hamburger-wrapper">
+                <button type="button" class="hamburger" id="hamburgerBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="navbar-mobile" id="navbarMenu">
+                <a href="guest_home.aspx">Home</a>
+                <a href="guest_all_decks.aspx#">Decks</a>
+                <a href="guest_about_us.aspx#">About Us</a>
+                <div class="mobile-btn-group">
+                    <a href="login.aspx" class="login-btn">Log In</a>
+                    <a href="signup.aspx" class="get-started-btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-column-rights">
+                <h3>Tech Terms</h3>
+                <p>&copy; Tech Terms. All rights reserved.</p>
+            </div>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h4>Top Courses</h4>
+                    <ul>
+                        <li><a href="guest_all_decks.aspx">Cybersecurity</a></li>
+                        <li><a href="guest_all_decks.aspx">Ethical Hacking</a></li>
+                        <li><a href="guest_all_decks.aspx">Data Structures</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Link</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            var hamburger = document.getElementById('hamburgerBtn');
+            var navbar = document.getElementById('navbarMenu');
+
+            if (hamburger && navbar) {
+                hamburger.addEventListener('click', function () {
+                    navbar.classList.toggle('show');
+                });
+
+                // Close menu when a link is clicked
+                var navLinks = navbar.querySelectorAll('a');
+                for (var i = 0; i < navLinks.length; i++) {
+                    navLinks[i].addEventListener('click', function () {
+                        navbar.classList.remove('show');
+                    });
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,301 @@
+﻿body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.logo a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.admin_nav {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: #1a1a2e;
+    position: relative; /* Add this - crucial for mobile menu positioning */
+}
+
+.hamburger-wrapper, .navbar-mobile {
+    display: none;
+}
+
+.navbar-desktop {
+    display: flex;
+    gap: 3rem;
+}
+
+.navbar-desktop a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: opacity 0.3s;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.navbar-desktop a:hover {
+    opacity: 0.6;
+}
+
+.admin-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.member-profile-btn {
+    background: transparent;
+    border: 1px solid white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.member-profile-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Member dashboard page */
+
+.member-welcome-msg {
+    background: linear-gradient(135deg, #4f46e5, #818cf8);
+    margin: 3rem;
+    border-radius: 20px;
+    color: white;
+    padding: 2rem;
+}
+
+.member-welcome-msg p {
+    font-size: 1rem;
+}
+
+.member-activity-summary {
+    display: grid;
+    border-radius: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem;
+}
+
+.cards-learnt, .total-study-list {
+    background: linear-gradient(135deg, #4f46e5, #818cf8);
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+}
+
+.cards-learnt h2, .total-study-list h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+.cards-learnt p, .total-study-list p {
+    font-size: 1rem;
+}
+
+.member-activities {
+    display: grid;
+    border-radius: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem;
+}
+
+.browse-deck-dir a, .study-list-dir a, .recent-activiy-dir a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.browse-deck-dir h2, .study-list-dir h2, .recent-activiy-dir h2 {
+    font-size: 1.5rem;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #4f46e5;
+    display: inline-block;
+}
+
+.activity-deck-card {
+    border-radius: 20px;
+    padding: 5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    background: linear-gradient(135deg, #4f46e5, #818cf8);
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 2px solid #e0e0e0;
+    transition: transform 0.3s ease;
+}
+
+.activity-deck-card:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, #6366f1, #a5b4fc);
+    box-shadow: 0 8px 15px rgba(79, 70, 229, 0.3);
+    border: none;
+}
+
+.activity-deck-card p {
+    margin: 0;
+}
+
+.footer {
+    background: #1a1a2e;
+    color: white;
+    padding: 3rem;
+    margin-top: 4rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-column {
+    width: 180px;
+}
+
+.footer-column-rights h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.footer-column p {
+    font-size: 0.9rem;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-column ul li a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-column ul li a:hover {
+    color: #4f46e5;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-desktop, .admin-btn {
+        display: none;
+    }
+
+    .hamburger-wrapper {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+    }
+
+    .hamburger span {
+        width: 30px;
+        height: 3px;
+        background: white;
+    }
+
+    .navbar-mobile {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 50vh;
+        background: #1a1a2e;
+        z-index: 1000;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .navbar-mobile.show {
+        display: flex;
+    }
+
+    .navbar-mobile a {
+        font-size: 1.2rem;
+        padding: 0.5rem 0;
+        color: white;
+        text-decoration: none;
+        transition: opacity 0.3s;
+    }
+
+    .navbar-mobile a:hover {
+        opacity: 0.6;
+    }
+
+    .member_nav {
+        align-items: center;
+        position: relative;
+        justify-content: space-between;
+        padding: 1.5rem;
+        background: #1a1a2e;
+        height: 40px;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+    }
+
+    .footer-container {
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-column-rights {
+        text-align: center;
+    }
+
+    .footer-column {
+        width: 100%;
+    }}
