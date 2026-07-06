@@ -47,9 +47,7 @@ namespace GroupAssignment
 
         private void ShowCard(int index)
         {
-            string query = $@"SELECT cardId, term, cardDefinition FROM flashcardTable 
-                             WHERE deckId = {Session["GuestCurrentDeck"]} 
-                             ORDER BY cardId OFFSET {index} ROWS FETCH NEXT 1 ROWS ONLY";
+            string query = $@"SELECT cardId, term, cardDefinition FROM flashcardTable WHERE deckId = {Session["GuestCurrentDeck"]} ORDER BY cardId OFFSET {index} ROWS FETCH NEXT 1 ROWS ONLY";
 
             using (SqlConnection con = new SqlConnection(connString))
             using (SqlCommand cmd = new SqlCommand(query, con))

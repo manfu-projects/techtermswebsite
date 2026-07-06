@@ -10,15 +10,23 @@ namespace GroupAssignment
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Username"] == null)
+            if (Session["UserId"] == null)
             {
                 Response.Redirect("login.aspx");
+                return;
+            }
+
+            string role = Session["Role"]?.ToString();
+
+            if (role != "Member")
+            {
+                Response.Redirect("login.aspx");
+                return;
             }
         }
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-            // Validate input
             if (string.IsNullOrWhiteSpace(txtListName.Text))
             {
                 lblError.Text = "Please enter a list name.";

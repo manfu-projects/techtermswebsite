@@ -9,11 +9,11 @@
         </div>
         <div class="member-activity-summary">
             <div class="cards-learnt">
-                <h2>100</h2>
-                <p>Cards Learned</p>
+                <h2><asp:Label ID="cardsLearntValue" runat="server" Text="0"></asp:Label></h2>
+                <p>Cards Saved</p>
             </div>
             <div class="total-study-list">
-                <h2>5</h2>
+                <h2><asp:Label ID="totalListsValue" runat="server" Text="0"></asp:Label></h2>
                 <p>Study List</p>
             </div>
         </div>

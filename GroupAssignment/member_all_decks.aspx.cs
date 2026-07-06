@@ -14,9 +14,18 @@ namespace GroupAssignment
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Username"] == null)
+            if (Session["UserId"] == null)
             {
                 Response.Redirect("login.aspx");
+                return;
+            }
+
+            string role = Session["Role"]?.ToString();
+
+            if (role != "Member")
+            {
+                Response.Redirect("login.aspx");
+                return;
             }
 
             if (!IsPostBack)
@@ -76,13 +85,11 @@ namespace GroupAssignment
 
                     if (string.IsNullOrEmpty(categoryName))
                     {
-                        // Load all decks
                         query = "SELECT deckId, deckName, deckDesc FROM deckTable ORDER BY deckName";
                         cmd = new SqlCommand(query, con);
                     }
                     else
                     {
-                        // Load decks filtered by category name
                         query = "SELECT deckId, deckName, deckDesc FROM deckTable WHERE deckName = @categoryName ORDER BY deckName";
                         cmd = new SqlCommand(query, con);
                         cmd.Parameters.AddWithValue("@categoryName", categoryName);

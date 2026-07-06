@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Darren\\source\\repos\\GroupAssignment\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E3AE37F8-B7C1-425C-AF85-86FF64CD8A8B}|GroupAssignment\\GroupAssignment.csproj|c:\\users\\darren\\source\\repos\\groupassignment\\groupassignment\\member_dashboard.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3AE37F8-B7C1-425C-AF85-86FF64CD8A8B}|GroupAssignment\\GroupAssignment.csproj|solutionrelative:groupassignment\\member_dashboard.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3AE37F8-B7C1-425C-AF85-86FF64CD8A8B}|GroupAssignment\\GroupAssignment.csproj|c:\\users\\darren\\source\\repos\\groupassignment\\groupassignment\\admin_dashboard.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3AE37F8-B7C1-425C-AF85-86FF64CD8A8B}|GroupAssignment\\GroupAssignment.csproj|solutionrelative:groupassignment\\admin_dashboard.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "member_dashboard.aspx.designer.cs",
-              "DocumentMoniker": "C:\\Users\\Darren\\source\\repos\\GroupAssignment\\GroupAssignment\\member_dashboard.aspx.designer.cs",
-              "RelativeDocumentMoniker": "GroupAssignment\\member_dashboard.aspx.designer.cs",
-              "ToolTip": "C:\\Users\\Darren\\source\\repos\\GroupAssignment\\GroupAssignment\\member_dashboard.aspx.designer.cs",
-              "RelativeToolTip": "GroupAssignment\\member_dashboard.aspx.designer.cs",
+              "Title": "admin_dashboard.aspx.designer.cs",
+              "DocumentMoniker": "C:\\Users\\Darren\\source\\repos\\GroupAssignment\\GroupAssignment\\admin_dashboard.aspx.designer.cs",
+              "RelativeDocumentMoniker": "GroupAssignment\\admin_dashboard.aspx.designer.cs",
+              "ToolTip": "C:\\Users\\Darren\\source\\repos\\GroupAssignment\\GroupAssignment\\admin_dashboard.aspx.designer.cs",
+              "RelativeToolTip": "GroupAssignment\\admin_dashboard.aspx.designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-05T06:49:14.968Z",
+              "WhenOpened": "2026-07-06T16:32:25.415Z",
               "EditorCaption": ""
             },
             {

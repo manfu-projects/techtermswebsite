@@ -44,7 +44,21 @@ namespace GroupAssignment
                 Session["Role"] = GetUserRole(username);
 
                 UpdateLastLogin(username);
-                Response.Redirect("member_dashboard.aspx");
+
+                string role = Session["Role"]?.ToString();
+
+                if (role == "Admin")
+                {
+                    Response.Redirect("admin_dashboard.aspx");
+                }
+                else if (role == "Member")
+                {
+                    Response.Redirect("member_dashboard.aspx");
+                }
+                else
+                {
+                    Response.Redirect("guest_home.aspx");
+                }
             }
             else
             {
@@ -120,18 +134,23 @@ namespace GroupAssignment
                     cmd.Parameters.AddWithValue("@username", username);
 
                     object result = cmd.ExecuteScalar();
-                    if (result != null)
+
+
+                    if (result != null && !string.IsNullOrEmpty(result.ToString()))
                     {
                         return result.ToString();
                     }
-                    return "User";
+
+                    return "Guest";
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                return "User";
+                System.Diagnostics.Debug.WriteLine("GetUserRole Error: " + ex.Message);
+                return "Guest";
             }
         }
+
         private void UpdateLastLogin(string username)
         {
             try

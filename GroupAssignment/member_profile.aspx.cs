@@ -19,6 +19,15 @@ namespace GroupAssignment
             if (Session["UserId"] == null)
             {
                 Response.Redirect("login.aspx");
+                return;
+            }
+
+            string role = Session["Role"]?.ToString();
+
+            if (role != "Member")
+            {
+                Response.Redirect("login.aspx");
+                return;
             }
 
             currentUserId = Convert.ToInt32(Session["UserId"]);
@@ -66,7 +75,6 @@ namespace GroupAssignment
         {
             string newUsername = args.Value;
 
-            // If username hasn't changed, it's valid
             if (newUsername == currentUsername)
             {
                 args.IsValid = true;
@@ -99,7 +107,6 @@ namespace GroupAssignment
         {
             string newEmail = args.Value;
 
-            // If email hasn't changed, it's valid
             if (newEmail == currentEmail)
             {
                 args.IsValid = true;
@@ -145,7 +152,8 @@ namespace GroupAssignment
                 {
                     string query = "UPDATE userTable SET username = @username, email = @email";
 
-                    // Only update password if provided
+                    // update password if provided
+
                     if (!string.IsNullOrWhiteSpace(confirmPWTxt1.Text))
                     {
                         query += ", password = @password";

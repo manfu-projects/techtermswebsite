@@ -8,7 +8,7 @@
     <div class="member-study-lists">
         <div class="study-lists-header">
             <h2>My Study Lists</h2>
-            <a href="member_create_list.aspx" class="create-list-btn" onclick="showCreateListModal()">+ Create New List</a>
+            <a href="member_create_list.aspx" class="create-list-btn">+ Create New List</a>
         </div>
         
         <div class="study-lists-grid">
@@ -34,7 +34,7 @@
                             Text="View List" 
                             CssClass="view-list-btn"
                             CommandName="ViewList"
-                            CommandArgument='<%# Eval("listId") %>' />
+                            CommandArgument='<%# Eval("listName") %>' />
                     </div>
                 </ItemTemplate>
             </asp:Repeater>

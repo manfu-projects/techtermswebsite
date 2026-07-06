@@ -87,6 +87,7 @@
     <Content Include="member_profile.aspx" />
     <Content Include="member_study_list.aspx" />
     <Content Include="member_page.css" />
+    <Content Include="member_view_study_list.aspx" />
     <Content Include="save_button.png" />
     <Content Include="signup.aspx" />
     <Content Include="guest_page.css" />
@@ -204,6 +205,13 @@
     </Compile>
     <Compile Include="member_navigation.Master.designer.cs">
       <DependentUpon>member_navigation.Master</DependentUpon>
+    </Compile>
+    <Compile Include="member_view_study_list.aspx.cs">
+      <DependentUpon>member_view_study_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member_view_study_list.aspx.designer.cs">
+      <DependentUpon>member_view_study_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="signup.aspx.cs">

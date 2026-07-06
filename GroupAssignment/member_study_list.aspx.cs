@@ -10,9 +10,18 @@ namespace GroupAssignment
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Username"] == null)
+            if (Session["UserId"] == null)
             {
                 Response.Redirect("login.aspx");
+                return;
+            }
+
+            string role = Session["Role"]?.ToString();
+
+            if (role != "Member")
+            {
+                Response.Redirect("login.aspx");
+                return;
             }
 
             if (!IsPostBack)
@@ -33,9 +42,9 @@ namespace GroupAssignment
                     con.Open();
 
                     string query = @"SELECT listName, 
-                                            MIN(listId) as listId, 
-                                            MIN(dateAdded) as dateAdded, 
-                                            COUNT(cardId) as cardCount 
+                                     MIN(listId) as listId, 
+                                     MIN(dateAdded) as dateAdded, 
+                                     COUNT(cardId) as cardCount 
                                      FROM studyListTable 
                                      WHERE userId = @userId 
                                      GROUP BY listName 
@@ -58,14 +67,14 @@ namespace GroupAssignment
         {
             if (e.CommandName == "ViewList")
             {
-                int listId = Convert.ToInt32(e.CommandArgument);
-                Response.Redirect($"member_view_study_list.aspx?listId={listId}");
+                string listName = e.CommandArgument.ToString();
+                Response.Redirect($"member_view_study_list.aspx?listName={listName}");
             }
             else if (e.CommandName == "DeleteList")
             {
                 string listName = e.CommandArgument.ToString();
                 deleteStudyList(listName);
-                showStudyLists(); // Refresh 
+                showStudyLists();
             }
         }
 

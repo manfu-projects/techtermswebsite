@@ -19,16 +19,13 @@ namespace GroupAssignment
             {
                 LoadCategories();
 
-                // Check if a category was selected
                 string category = Request.QueryString["category"];
                 if (!string.IsNullOrEmpty(category))
                 {
-                    // Show ONLY lock message when any category is clicked
                     ShowLockMessageOnly(category);
                 }
                 else
                 {
-                    // Show first 6 decks + lock message at bottom for "All Decks"
                     LoadDecksWithLockMessage();
                 }
             }
@@ -57,6 +54,7 @@ namespace GroupAssignment
             }
         }
 
+        // Show preview decks & lock message
         private void LoadDecksWithLockMessage()
         {
             try
@@ -67,7 +65,6 @@ namespace GroupAssignment
                 {
                     con.Open();
 
-                    // Get first 6 decks
                     string query = "SELECT TOP 9 deckId, deckName, deckDesc FROM deckTable ORDER BY deckName";
                     SqlCommand cmd = new SqlCommand(query, con);
 
@@ -87,11 +84,11 @@ namespace GroupAssignment
 
         private void ShowLockMessageOnly(string categoryName)
         {
-            // Clear the decks repeater
             rptDecks.DataSource = null;
             rptDecks.DataBind();
 
-            // Show only the lock message (full width, no decks)
+            // Show only lock message
+
             pnlLockedDecks.Visible = true;
             pnlLockedDecks.CssClass = "locked-decks-banner-full";
         }

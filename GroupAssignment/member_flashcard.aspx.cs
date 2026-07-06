@@ -12,9 +12,18 @@ namespace GroupAssignment
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Username"] == null)
+            if (Session["UserId"] == null)
             {
                 Response.Redirect("login.aspx");
+                return;
+            }
+
+            string role = Session["Role"]?.ToString();
+
+            if (role != "Member")
+            {
+                Response.Redirect("login.aspx");
+                return;
             }
 
             if (!IsPostBack)
@@ -45,9 +54,7 @@ namespace GroupAssignment
 
         private void ShowCard(int index)
         {
-            string query = $@"SELECT cardId, term, cardDefinition FROM flashcardTable 
-                             WHERE deckId = {Session["CurrentDeck"]} 
-                             ORDER BY cardId OFFSET {index} ROWS FETCH NEXT 1 ROWS ONLY";
+            string query = $@"SELECT cardId, term, cardDefinition FROM flashcardTable WHERE deckId = {Session["CurrentDeck"]} ORDER BY cardId OFFSET {index} ROWS FETCH NEXT 1 ROWS ONLY";
 
             using (SqlConnection con = new SqlConnection(connString))
             using (SqlCommand cmd = new SqlCommand(query, con))

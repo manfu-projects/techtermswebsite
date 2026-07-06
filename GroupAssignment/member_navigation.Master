@@ -55,17 +55,16 @@
                 <div class="footer-column">
                     <h4>Top Courses</h4>
                     <ul>
-                        <li><a href="#">UI and UX Design</a></li>
-                        <li><a href="#">Ethical Hacking</a></li>
-                        <li><a href="#">SOC Analysis</a></li>
+                        <li><a href="member_all_decks.aspx">Cybersecurity</a></li>
+                        <li><a href="member_all_decks.aspx">Ethical Hacking</a></li>
+                        <li><a href="member_all_decks.aspx">Data Structures</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Quick Link</h4>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="member_about_us.aspx">About Us</a></li>
+                        <li><a href="member_about_us.aspx">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
