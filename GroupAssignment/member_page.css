@@ -66,6 +66,205 @@
     color: black;
 }
 
+
+/* Member home page */
+
+.hero-container {
+    display: flex;
+    margin: 50px;
+    justify-content: center;
+}
+
+.hero-content {
+    padding: 2.5rem ;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.hero-content p {
+    text-align: justify;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 550px;
+}
+
+.hero-btn {
+    display: flex;
+    text-decoration: none;
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+}
+
+.hero-start-learning, .hero-create-account {
+    background: white;
+    border: 2px solid #414ceb;
+    color: #414ceb;
+    padding: 15px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-start-learning:hover, .hero-create-account:hover {
+    background: #414ceb;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 4rem;
+}
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hero-stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.hero-stat-label {
+    font-size: 0.8rem;
+}
+
+.hero-img {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+.hero-img img {
+    height: auto;
+    border-radius: 20px;
+}
+
+.explore-deck {
+    padding: 1.5rem 2.5rem;
+    margin: 20px;
+}
+
+.explore-deck-header {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.explore-deck-header h2 {
+    font-size: 2.5rem;
+}
+
+.explore-deck-header p {
+    font-size: 1rem;
+    color: #666;
+    letter-spacing: 1.5px;
+}
+
+.explore-deck-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.explore-deck-card {
+    background: #ededed;
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.explore-deck-card:hover {
+    transform: translateY(-5px);
+    background: #e1e1e1;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.explore-card-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    background: #f0f4ff;
+    border-radius: 20px;
+    border: .8px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.explore-deck-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 0.5rem;
+}
+
+.explore-deck-card p {
+    font-size: 1rem;
+    color: #888;
+    text-align:center;
+    margin-bottom: 1rem;
+}
+
+.card-stats {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.why-us {
+    padding: 2rem 2.5rem;
+    margin: 20px
+}
+
+.why-us-header {
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+.why-us-header h2 {
+    font-size: 2.5rem;
+}
+
+.why-us-header p {
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+
+.explore-deck-card p1 {
+    font-size: 1rem;
+    color: #888;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 /* Member dashboard page */
 
 .member-welcome-msg {
@@ -212,7 +411,7 @@
     color: #4f46e5;
 }
 
-/* Member decks page (categories) */
+/* Member decks categories */
 
 .member-decks {
     box-sizing: border-box;
@@ -687,7 +886,7 @@
     margin-bottom: 2rem;
 }
 
-/* Popup Styles */
+/* Save to list popup */
 
 .card-save-to-list {
     display: none;
@@ -795,6 +994,46 @@
     margin-top: 10px;
     text-align: center;
     color: #4CAF50;
+}
+
+
+/* View study list flashcards */
+
+.list-prev-flashcard-btn {
+    min-width: 160px;
+    padding: 15px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    background: transparent;
+    border: 2px solid #4f46e5;
+    color: #4f46e5;
+}
+
+.list-next-flashcard-btn {
+    min-width: 160px;
+    border-radius: 30px;
+    padding: 15px 18px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    background: linear-gradient(135deg, #4f46e5, #818cf8);
+    border: none;
+    color: white;
+}
+
+.list-prev-flashcard-btn:hover {
+    background: #4f46e5;
+    color: white;
+    transform: translateX(-3px);
+}
+
+.list-next-flashcard-btn:hover {
+    transform: translateX(3px);
+    background: linear-gradient(135deg, #6366f1, #a5b4fc);
 }
 
 /* Member profile page */
@@ -1035,6 +1274,44 @@
         height: 40px;
     }
 
+    .hero-container {
+        flex-direction: column;
+        margin: 0.8rem;
+        gap: 1.25rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.9rem;
+        text-align: center;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    .hero-btn, .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-img {
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .explore-deck-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .explore-deck-header {
+        text-align: center;
+    }
+
+    .explore-deck-header h2 {
+        font-size: 1.8rem;
+    }
+
     .footer {
         flex-direction: column;
         padding: 2rem 1rem;
@@ -1110,41 +1387,3 @@
     }
 }
 
-/* View study list flashcards */
-
-.list-prev-flashcard-btn {
-    min-width: 160px;
-    padding: 15px 18px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    background: transparent;
-    border: 2px solid #4f46e5;
-    color: #4f46e5;
-}
-
-.list-next-flashcard-btn {
-    min-width: 160px;
-    border-radius: 30px;
-    padding: 15px 18px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    background: linear-gradient(135deg, #4f46e5, #818cf8);
-    border: none;
-    color: white;
-}
-
-.list-prev-flashcard-btn:hover {
-    background: #4f46e5;
-    color: white;
-    transform: translateX(-3px);
-}
-
-.list-next-flashcard-btn:hover {
-    transform: translateX(3px);
-    background: linear-gradient(135deg, #6366f1, #a5b4fc);
-}

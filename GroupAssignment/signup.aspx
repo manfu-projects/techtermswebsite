@@ -25,7 +25,7 @@
                         Display="Dynamic"></asp:RegularExpressionValidator>
                     <asp:CustomValidator ID="UsernameExistsCV" runat="server" 
                         ControlToValidate="txtUsername"
-                        OnServerValidate="UsernameExistsCV_Validation"
+                        OnServerValidate="doesUsernameExistsValidation"
                         ErrorMessage="⚠ Username already exists. Please choose another."
                         ForeColor="Red" Display="Dynamic" />
                 </span>
@@ -44,8 +44,8 @@
                         ForeColor="Red" Display="Dynamic" />
                     <asp:CustomValidator ID="EmailCVExists" runat="server" 
                         ControlToValidate="txtEmail"
-                        OnServerValidate="EmailExistsCV_Validation"
-                        ErrorMessage="⚠ Email already exists. Please choose another."
+                        OnServerValidate="doesEmailExistsValidation"
+                        ErrorMessage="⚠ Email already exists. Please enter another."
                         ForeColor="Red" Display="Dynamic" />
                 </span>
             </div>

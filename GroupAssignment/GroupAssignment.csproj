@@ -84,6 +84,7 @@
     <Content Include="member_create_list.aspx" />
     <Content Include="member_dashboard.aspx" />
     <Content Include="member_flashcard.aspx" />
+    <Content Include="member_home.aspx" />
     <Content Include="member_profile.aspx" />
     <Content Include="member_study_list.aspx" />
     <Content Include="member_page.css" />
@@ -184,6 +185,13 @@
     </Compile>
     <Compile Include="member_flashcard.aspx.designer.cs">
       <DependentUpon>member_flashcard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member_home.aspx.cs">
+      <DependentUpon>member_home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member_home.aspx.designer.cs">
+      <DependentUpon>member_home.aspx</DependentUpon>
     </Compile>
     <Compile Include="member_profile.aspx.cs">
       <DependentUpon>member_profile.aspx</DependentUpon>

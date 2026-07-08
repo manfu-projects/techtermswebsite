@@ -150,6 +150,8 @@ namespace GroupAssignment
 
             SaveCardToList(listName);
 
+            // if a new list was created (selected value was "0"), reload the dropdown list to show the newly created list
+
             if (ddlStudyLists.SelectedValue == "0") LoadStudyLists();
 
             ScriptManager.RegisterStartupScript(this, GetType(), "close-save-page",

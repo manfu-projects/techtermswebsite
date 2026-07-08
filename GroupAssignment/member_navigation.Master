@@ -14,7 +14,7 @@
     <form runat="server">
         <div class="member_nav">
             <div class="logo">
-                <a href="#">Tech Terms</a>
+                <a href="member_home.aspx">Tech Terms</a>
             </div>
             <div class="navbar-desktop">
                 <a href="member_dashboard.aspx">Dashboard</a>

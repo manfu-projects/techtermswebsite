@@ -43,8 +43,7 @@ namespace GroupAssignment
                 {
                     conn.Open();
 
-                    string insertQuery = @"INSERT INTO studyListTable (userId, cardId, listName) 
-                                          VALUES (@userId, NULL, @listName)";
+                    string insertQuery = @"INSERT INTO studyListTable (userId, cardId, listName) VALUES (@userId, NULL, @listName)";
 
                     using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
                     {

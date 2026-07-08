@@ -641,7 +641,8 @@
     animation: fadeInUp 0.5s ease;
 }
 
-/* Locked Decks Banner Full - Shows when category is clicked (no decks visible) */
+/* Shows when category is clicked */
+
 .locked-decks-banner-full {
     grid-column: 1 / -1;
     margin: 40px auto;
@@ -653,17 +654,6 @@
     animation: fadeInUp 0.5s ease;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .locked-banner-content {
     display: flex;
     align-items: center;
@@ -672,7 +662,6 @@
     flex-wrap: wrap;
 }
 
-/* For full page version - more centered */
 .locked-decks-banner-full .locked-banner-content {
     flex-direction: column;
     text-align: center;
@@ -769,7 +758,7 @@
     text-decoration: none;
 }
 
-/* guest flashcard page */
+/* Guest flashcard page */
 
 .guest-flashcard-container {
     max-width: 800px;
@@ -1011,16 +1000,45 @@
     .mobile-btn-group {
         display: flex;
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 1.5rem;
         width: 100%;
         max-width: 200px;
-        margin-top: 0.8rem;
     }
 
-    .mobile-btn-group .login-btn, .mobile-btn-group .get-started-btn {
+    .login-btn {
+        background: transparent;
+        border: none;
+        color: white;
         text-align: center;
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: opacity 0.3s;
+        position: relative;
+        padding-bottom: 3px;
+    }
+
+    .login-btn:hover {
+        background: none;
+        opacity: 0.6;
+        color: white;
+    }
+
+    .get-started-btn {
+        background: transparent;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: opacity 0.3s;
+        position: relative;
+        padding-bottom: 3px;
+    }
+
+    .get-started-btn:hover {
+        background: none;
+        opacity: 0.6;
+        color: white;
     }
 
     .guest_nav {

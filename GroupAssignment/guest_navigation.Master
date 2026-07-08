@@ -83,12 +83,14 @@
                     navbar.classList.toggle('show');
                 });
 
-                // Close menu when a link is clicked
                 var navLinks = navbar.querySelectorAll('a');
                 for (var i = 0; i < navLinks.length; i++) {
                     navLinks[i].addEventListener('click', function () {
                         navbar.classList.remove('show');
                     });
+
+                    // Close menu when a link is clicked
+
                 }
             }
         });

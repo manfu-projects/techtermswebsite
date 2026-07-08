@@ -65,7 +65,7 @@ namespace GroupAssignment
                 {
                     con.Open();
 
-                    string query = "SELECT TOP 9 deckId, deckName, deckDesc FROM deckTable ORDER BY deckName";
+                    string query = "SELECT TOP 15 deckId, deckName, deckDesc FROM deckTable ORDER BY deckName";
                     SqlCommand cmd = new SqlCommand(query, con);
 
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -86,8 +86,6 @@ namespace GroupAssignment
         {
             rptDecks.DataSource = null;
             rptDecks.DataBind();
-
-            // Show only lock message
 
             pnlLockedDecks.Visible = true;
             pnlLockedDecks.CssClass = "locked-decks-banner-full";

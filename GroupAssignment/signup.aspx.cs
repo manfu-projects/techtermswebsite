@@ -22,43 +22,38 @@ namespace GroupAssignment
                 txtEmail.Text = "";
                 txtPassword1.Text = "";
                 txtPassword2.Text = "";
-
-                // Remove the query string from URL (optional - requires JavaScript)
-                // ClientScript.RegisterStartupScript(this.GetType(), "removeQuery", 
-                //    "window.history.replaceState({}, document.title, 'signup.aspx');", true);
             }
         }
 
-        protected void UsernameExistsCV_Validation(object source, ServerValidateEventArgs args)
+        protected void doesUsernameExistsValidation(object source, ServerValidateEventArgs args)
         {
             string username = args.Value.Trim();
 
-            if (UsernameExists(username))
+            if (doesUsernameExists(username))
             {
-                args.IsValid = false; // Username exists, validation fails
+                args.IsValid = false;
             }
             else
             {
-                args.IsValid = true; // Username available, validation passes
+                args.IsValid = true;
             }
         }
 
-        protected void EmailExistsCV_Validation(object source, ServerValidateEventArgs args)
+        protected void doesEmailExistsValidation(object source, ServerValidateEventArgs args)
         {
             string email = args.Value.Trim();
             
-            if (EmailExists(email))
+            if (doesEmailExists(email))
             {
-                args.IsValid = false; // Username exists, validation fails
+                args.IsValid = false;
             }
             else
             {
-                args.IsValid = true; // Username available, validation passes
+                args.IsValid = true;
             }
         }
 
-        // Check if username exists in database
-        private bool UsernameExists(string username)
+        private bool doesUsernameExists(string username)
         {
             try
             {
@@ -78,12 +73,11 @@ namespace GroupAssignment
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Error checking username: " + ex.Message);
-                return false; // Assume username doesn't exist if error occurs
+                return false;
             }
         }
 
-        // Check if email exists
-        private bool EmailExists(string email)
+        private bool doesEmailExists(string email)
         {
             try
             {
@@ -109,13 +103,13 @@ namespace GroupAssignment
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            // Clear any previous error messages
             lblErrorMessage.Visible = false;
             lblSuccessMessage.Visible = false;
             lblErrorMessage.Text = "";
             lblSuccessMessage.Text = "";
 
-            // Check if all validators pass (including custom validator)
+            // Check if all validators pass
+
             if (!Page.IsValid)
             {
                 lblErrorMessage.Text = "Please correct the errors below.";
@@ -123,12 +117,10 @@ namespace GroupAssignment
                 return;
             }
 
-            // Get input values
             string username = txtUsername.Text.Trim();
             string email = txtEmail.Text.Trim();
             string password = txtPassword1.Text;
 
-            // Create user in database
             try
             {
                 string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
@@ -137,7 +129,6 @@ namespace GroupAssignment
                 {
                     con.Open();
 
-                    // Insert query
                     string insertQuery = @"INSERT INTO [userTable] (username, password, email, role, dateRegistered, lastLogin) 
                                            VALUES (@username, @password, @email, @role, @dateRegistered, @lastLogin)";
 

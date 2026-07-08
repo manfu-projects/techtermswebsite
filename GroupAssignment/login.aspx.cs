@@ -77,7 +77,9 @@ namespace GroupAssignment
                 {
                     con.Open();
 
-                    string query = "SELECT COUNT(*) FROM [userTable] WHERE username = @username AND password = @password";
+                    // case-sensitive collation
+
+                    string query = "SELECT COUNT(*) FROM [userTable] WHERE username = @username COLLATE SQL_Latin1_General_CP1_CS_AS AND password = @password";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password", password);
